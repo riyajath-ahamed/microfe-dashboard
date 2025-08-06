@@ -6,6 +6,7 @@ import federation from "@originjs/vite-plugin-federation";
 export default defineConfig({
   server: {
     port: 3001,
+    cors: true,
   },
   plugins: [
     react(),
@@ -13,7 +14,7 @@ export default defineConfig({
       name: 'dashboard',
       filename: 'remoteEntry.js',
       exposes: {
-        './Dashboard': './src/dashboard/dashboard.tsx',
+        './Dashboard': './src/dashboard.tsx',
       },
       shared: ['react', 'react-dom'],
     })
